@@ -7,7 +7,8 @@ const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
 
 <a href={siteTitleHref} class="site-title">
   {config.logo && logos.dark && (
-    !logos.light?.src ? (
+    !logos.light?.src
+? (
       <img
         class="logo-size"
         alt={config.logo.alt}
@@ -15,7 +16,8 @@ const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
         width={logos.dark.width}
         height={logos.dark.height}
       />
-    ) : (
+    )
+: (
       <span class="logo-dual logo-size">
         <img
           class="logo-img logo-light"
