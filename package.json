@@ -47,7 +47,7 @@
     "stale": "stale-del -u",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "bumpp package.json --commit --push --tag && pnpm -r publish --access public"
+    "release": "bumpp package.json --commit --push --tag"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.35.0",
