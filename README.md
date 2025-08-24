@@ -1,32 +1,14 @@
-# starter-ts
+# Destyler Theme
 
-[![NPM version](https://img.shields.io/npm/v/@elonehoo/starter-ts?color=a1b858&label=)](https://www.npmjs.com/package/@elonehoo/starter-ts)
+This is the [Starlight](https://starlight.astro.build/) theme for the Destyler Documentation site.
 
-Starter template for TypeScript library.
+## Development Setup
 
-## Try it now!
-
-### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/elonehoo-starter/typescript/generate).
-
-### Clone to local
-
-If you prefer to do it manually with the cleaner git history
+This repo can be developed on its own since it is a self-contained Starlight theme.
+Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps.
+A demo app is available in `/docs` and can be run with `pnpm dev`:
 
 ```bash
-sudo npx degit elonehoo-starter/typescript my-ts-app
-cd my-ts-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
+pnpm install
+pnpm dev
 ```
-
-## Checklist
-
-When you use this template, try follow the checklist to update your info properly
-
-- [ ] Change the author name in `LICENSE`
-- [ ] Change the package name in `package.json` and package info
-- [ ] Remove the `.github` folder which contains the funding info
-- [ ] Clean up the README
-
-And, enjoy :)
