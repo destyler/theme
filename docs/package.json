@@ -10,12 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "catalog:",
-    "@unocss/reset": "catalog:",
-    "astro": "catalog:",
-    "sharp": "catalog:",
+    "@astrojs/starlight": "^0.35.2",
+    "@unocss/reset": "^66.4.2",
+    "astro": "^5.13.3",
+    "sharp": "^0.32.6",
     "starlight-theme-destyler": "workspace:*",
-    "unocss": "catalog:",
-    "unocss-preset-animations": "catalog:"
+    "unocss": "^66.4.2",
+    "unocss-preset-animations": "^1.2.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.3"
   }
 }

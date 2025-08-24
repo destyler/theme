@@ -9,7 +9,7 @@
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)) {
-  --at-apply: -tracking-wide font-semibold text-3xl leading-9 m-0 pb-2 scroll-m-20 border-b;
+  --at-apply: -tracking-wide font-semibold text-3xl leading-9 m-0 pb-2 scroll-m-20 border-b w-full!;
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)):first-child {
@@ -89,4 +89,8 @@
 
 .sl-markdown-content a:not(:where(.not-content *)) {
   --at-apply: font-medium underline underline-offset-4 text-inherit;
+}
+
+.sl-markdown-content ol {
+  --at-apply: mt-2;
 }

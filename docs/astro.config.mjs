@@ -87,9 +87,13 @@ export default defineConfig({
           ],
         },
       ],
-      social: {
-        github: 'https://github.com/destyler/starlight-theme-destyler',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/destyler/starlight-theme-destyler',
+        },
+      ],
       title: '@destyler/<span class="text-primary">theme</span>',
     }),
   ],

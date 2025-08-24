@@ -1,6 +1,6 @@
-import type { Plugin } from 'vite'
+import type { PluginOption } from 'vite'
 
-export default function injectComponents(componentsMap: Record<string, string> = {}): Plugin {
+export default function injectComponents(componentsMap: Record<string, string> = {}): PluginOption {
   return {
     name: 'vite-plugin-resolve-user-components',
     resolveId(id) {

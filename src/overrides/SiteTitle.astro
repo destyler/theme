@@ -6,29 +6,34 @@ const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
 ---
 
 <a href={siteTitleHref} class="site-title">
-  {
-    config.logo && logos.dark && (
-      <>
+  {config.logo && logos.dark && (
+    !logos.light?.src ? (
+      <img
+        class="logo-size"
+        alt={config.logo.alt}
+        src={logos.dark.src}
+        width={logos.dark.width}
+        height={logos.dark.height}
+      />
+    ) : (
+      <span class="logo-dual logo-size">
         <img
-          class:list={[{ 'light:sl-hidden': !('src' in config.logo) }, 'logo-size']}
+          class="logo-img logo-light"
+          alt={config.logo.alt}
+          src={logos.light.src}
+          width={logos.light.width}
+          height={logos.light.height}
+        />
+        <img
+          class="logo-img logo-dark"
           alt={config.logo.alt}
           src={logos.dark.src}
           width={logos.dark.width}
           height={logos.dark.height}
         />
-        {/* Show light alternate if a user configure both light and dark logos. */}
-        {!('src' in config.logo) && (
-          <img
-            class="dark:sl-hidden logo-size"
-            alt={config.logo.alt}
-            src={logos.light?.src}
-            width={logos.light?.width}
-            height={logos.light?.height}
-          />
-        )}
-      </>
+      </span>
     )
-  }
+  )}
   <span class:list={[{ 'sr-only': config.logo?.replacesTitle }, 'title-text']} set:html={siteTitle} />
 </a>
 
@@ -82,4 +87,11 @@ const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute
   a {
     text-decoration: inherit;
   }
+
+  /* 主题切换显示控制 */
+  .logo-dual { position: relative; display: inline-flex; }
+  .logo-img { display: inline-block; }
+  .logo-dark { display:none; }
+  html.dark .logo-light { display:none; }
+  html.dark .logo-dark { display:inline-block; }
 </style>

@@ -8,10 +8,10 @@ export function overrideComponents(
 ): StarlightUserConfig['components'] {
   const components = { ...starlightConfig.components }
   for (const override of overrides) {
-    const name = typeof override === 'string' ? override : override.name
+    const name = typeof override === 'string' ? override : (override as any).name
 
     if ((starlightConfig.components?.[name]) != null) {
-      const fallback = `starlight-theme-destyler/${typeof override === 'string' ? 'overrides' : 'components'}/${typeof override === 'string' ? override : override.fallback}.astro`
+      const fallback = `starlight-theme-destyler/${typeof override === 'string' ? 'overrides' : 'components'}/${typeof override === 'string' ? override : (override as any).fallback}.astro`
 
       logger.warn(`A \`<${name}>\` component override is already defined in your Starlight configuration.`)
       logger.warn(
@@ -25,7 +25,7 @@ export function overrideComponents(
   return components
 }
 
-type StarlightUserConfig = Parameters<StarlightPlugin['hooks']['config:setup']>['0']['config']
+type StarlightUserConfig = any // Parameters<StarlightPlugin['hooks']['config:setup']>['0']['config']
 
 type ComponentOverride =
   | keyof NonNullable<StarlightUserConfig['components']>
