@@ -83,7 +83,7 @@
 }
 
 .sl-markdown-content code:not(:where(.not-content *)) {
-  --at-apply: relative rounded bg-[hsl(var(--muted))] text-sm font-semibold px-[0.3rem] py-[0.2rem];
+  --at-apply: relative rounded text-sm font-semibold px-[0.3rem] py-[0.2rem];
   font-family: var(--sl-font-mono), monospace;
 }
 
