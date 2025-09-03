@@ -23,18 +23,21 @@ interface NormalizedLink {
 const links: NormalizedLink[] = []
 
 if (Array.isArray(raw)) {
-  ;(raw as SocialArrayItem[]).forEach(item => {
-    if (!item) return
+  ;(raw as SocialArrayItem[]).forEach((item) => {
+    if (!item)
+return
     const icon = item.icon
     const href = item.href || item.url
     if (icon && href) {
       links.push({ icon, href, label: item.label || icon })
     }
   })
-} else if (raw && typeof raw === 'object') {
+}
+ else if (raw && typeof raw === 'object') {
   // Fallback if someone supplies the old object map shape: { github: { label, url } }
   Object.entries(raw as Record<string, any>).forEach(([platform, value]) => {
-    if (!value || typeof value !== 'object') return
+    if (!value || typeof value !== 'object')
+return
     const href = value.href || value.url
     const icon = value.icon || platform
     if (icon && href) {
