@@ -1,7 +1,7 @@
 {
   "name": "starlight-theme-destyler",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.13.1",
   "description": "Starlight theme inspired by Destyler",
   "author": "Elone Hoo <hi@elonehoo.me>",
