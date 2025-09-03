@@ -2,23 +2,64 @@
 import { Icon } from '@astrojs/starlight/components'
 import config from 'virtual:starlight/user-config'
 
-type Platform = keyof NonNullable<typeof config.social>
-type SocialConfig = NonNullable<NonNullable<typeof config.social>[Platform]>
-const links = Object.entries(config.social || {}) as [Platform, SocialConfig][]
+type SocialArrayItem = {
+  icon?: string
+  label?: string
+  href?: string
+  url?: string
+  // allow any extra fields silently
+  [k: string]: any
+}
+
+const raw = (config as any).social as unknown
+
+// Use `any` for icon to avoid union constraint issues from Starlight's Icon component prop typings
+interface NormalizedLink {
+  icon: any
+  label: string
+  href: string
+}
+
+const links: NormalizedLink[] = []
+
+if (Array.isArray(raw)) {
+  ;(raw as SocialArrayItem[]).forEach(item => {
+    if (!item) return
+    const icon = item.icon
+    const href = item.href || item.url
+    if (icon && href) {
+      links.push({ icon, href, label: item.label || icon })
+    }
+  })
+} else if (raw && typeof raw === 'object') {
+  // Fallback if someone supplies the old object map shape: { github: { label, url } }
+  Object.entries(raw as Record<string, any>).forEach(([platform, value]) => {
+    if (!value || typeof value !== 'object') return
+    const href = value.href || value.url
+    const icon = value.icon || platform
+    if (icon && href) {
+      links.push({ icon, href, label: (value as any).label || platform })
+    }
+  })
+}
 ---
 
-{
-  links.length > 0 && (
-    <>
-      {links.map(([platform, { label, url }]) => (
-        <a href={url} rel="me" class="sl-flex button" data-variant="ghost">
-          <span class="sr-only">{label}</span>
-          <Icon name={platform} />
-        </a>
-      ))}
-    </>
-  )
-}
+{links.length > 0 && (
+  <>
+    {links.map(link => (
+      <a
+        href={link.href}
+        rel="me noopener noreferrer"
+        class="sl-flex button"
+        data-variant="ghost"
+        aria-label={link.label}
+      >
+        <span class="sr-only">{link.label}</span>
+        <Icon name={link.icon} />
+      </a>
+    ))}
+  </>
+)}
 
 <style>
   a {

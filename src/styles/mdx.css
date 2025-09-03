@@ -8,6 +8,10 @@
   }
 }
 
+.sl-markdown-content :not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper) + :is(.sl-heading-wrapper) {
+  --at-apply: mt-4;
+}
+
 .sl-markdown-content h2:not(:where(.not-content *)) {
   --at-apply: -tracking-wide font-semibold text-3xl leading-9 m-0 pb-2 scroll-m-20 border-b w-full!;
 }
@@ -29,7 +33,7 @@
 }
 
 .sl-markdown-content blockquote:not(:where(.not-content *)) {
-  --at-apply: italic mt-6 m-0 pl-6 border-l-2;
+  --at-apply: italic mt-6 m-0 pl-4 border-l-2;
   border-left-style: solid;
 }
 
@@ -75,7 +79,7 @@
 }
 
 .sl-markdown-content ul:not(:where(.not-content *)) {
-  --at-apply: list-disc ml-6 my-6;
+  --at-apply: list-disc ml-4 my-0;
 }
 
 .sl-markdown-content ul:not(:where(.not-content *)) > li {
@@ -91,6 +95,23 @@
   --at-apply: font-medium underline underline-offset-4 text-inherit;
 }
 
+.expressive-code .frame.has-title:not(.is-terminal) .title {
+  --at-apply: bg-transparent;
+}
+
 .sl-markdown-content ol {
   --at-apply: mt-2;
+}
+
+.starlight-aside {
+  --at-apply: rounded-md;
+}
+
+.sl-markdown-content p:not(:where(.not-content *)):not(li p):first-child {
+  --at-apply: mt-0;
+}
+
+
+.tablist-wrapper.not-content{
+  --at-apply: border-b border-b-px border-b-solid border-b-border;
 }
