@@ -41,7 +41,13 @@
 }
 
 .sl-markdown-content a:not(:where(.not-content *)) {
-  --at-apply: font-medium underline underline-offset-4 text-inherit;
+  --at-apply: font-medium underline decoration-dashed underline-offset-4 text-inherit transition-colors;
+  text-decoration-style: dashed;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):hover {
+  --at-apply: decoration-solid;
+  text-decoration-style: solid;
 }
 
 .expressive-code .frame.has-title:not(.is-terminal) .title {
