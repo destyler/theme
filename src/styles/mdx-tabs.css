@@ -1,0 +1,21 @@
+.tablist-wrapper.not-content {
+  --at-apply: relative border-b-2px border-b-solid border-b-border overflow-visible;
+}
+
+.tab a {
+  --at-apply: relative inline-block pb-2px;
+}
+
+.tab a[aria-selected='true'] {
+  border-bottom: none;
+}
+
+/* 基础下划线元素，默认收起并透明 */
+.tab a::after {
+  --at-apply: absolute left-0 right-0 bottom-0 content-empty h-2px bg-transparent z-1 transform scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform pointer-events-none;
+}
+
+/* 选中时展开并应用主色，形成滑入/颜色过渡动画 */
+.tab a[aria-selected='true']::after {
+  --at-apply: bg-primary scale-x-100;
+}

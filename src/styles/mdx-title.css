@@ -1,0 +1,29 @@
+.sl-markdown-content h1:not(:where(.not-content *)) {
+  --at-apply: -tracking-wide font-extrabold text-4xl leading-10 m-0 scroll-m-20;
+}
+
+@media (min-width: 1024px) {
+  .sl-markdown-content h1:not(:where(.not-content *)) {
+    --at-apply: text-5xl leading-none;
+  }
+}
+
+.sl-markdown-content :not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper) + :is(.sl-heading-wrapper) {
+  --at-apply: mt-4;
+}
+
+.sl-markdown-content h2:not(:where(.not-content *)) {
+  --at-apply: -tracking-wide font-semibold text-3xl leading-9 m-0 pb-2 scroll-m-20 border-b w-full!;
+}
+
+.sl-markdown-content h2:not(:where(.not-content *)):first-child {
+  --at-apply: mt-0;
+}
+
+.sl-markdown-content h3:not(:where(.not-content *)) {
+  --at-apply: -tracking-wide font-semibold text-2xl leading-8 m-0 scroll-m-20;
+}
+
+.sl-markdown-content h4:not(:where(.not-content *)) {
+  --at-apply: -tracking-wide font-semibold text-xl leading-7 m-0 scroll-m-20;
+}

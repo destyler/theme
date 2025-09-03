@@ -10,14 +10,7 @@
 }
 
 * {
-  --at-apply: border-border;
-  scrollbar-width: thin;
   scrollbar-color: hsl(var(--border)) transparent;
-}
-
-*,
-:after :before {
-  --at-apply: box-border border border-0 border-solid;
 }
 
 html {

@@ -1,0 +1,40 @@
+.sl-markdown-content table:not(:where(.not-content *)) {
+  --at-apply: w-full indent-[0] border-inherit border-collapse;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > thead > tr {
+  --at-apply: m-0 p-0 border-t;
+  border-top-style: solid;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > thead > tr > th {
+  --at-apply: font-bold text-left border px-4 py-2 border-solid;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > thead > tr > th[align="right"] {
+  --at-apply: text-right;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > thead > tr > th[align="center"] {
+  --at-apply: text-center;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > tbody > tr {
+  --at-apply: m-0 p-0 border-t;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > tbody > tr:nth-child(even) {
+  --at-apply: bg-[hsl(var(--muted))];
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > tbody > tr > td {
+  --at-apply: text-left border px-4 py-2 border-solid;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > tbody > tr > td[align="right"] {
+  --at-apply: text-right;
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) > tbody > tr > td[align="center"] {
+  --at-apply: text-center;
+}
