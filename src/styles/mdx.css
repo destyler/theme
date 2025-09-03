@@ -111,7 +111,3 @@
   --at-apply: mt-0;
 }
 
-
-.tablist-wrapper.not-content{
-  --at-apply: border-b border-b-px border-b-solid border-b-border;
-}
