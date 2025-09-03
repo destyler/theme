@@ -2,6 +2,10 @@
 @import './mdx-table.css';
 @import './mdx-tabs.css';
 
+.sl-markdown-content {
+  --at-apply: mt-6;
+}
+
 .sl-markdown-content summary:not(:where(.not-content *))::marker, .sl-markdown-content summary:not(:where(.not-content *))::-webkit-details-marker{
   --at-apply: hidden content-empty;
 }
@@ -11,7 +15,7 @@
 }
 
 .sl-markdown-content :not(a, strong, em, del, span, input, code, br) + :not(a, strong, em, del, span, input, code, br, :where(.not-content *)) {
-  margin-top: 0.75rem !important;
+  margin-top: 1rem !important;
 }
 
 .sl-markdown-content p:not(:where(.not-content *)):not(li p) {

@@ -17,7 +17,7 @@
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)):first-child {
-  --at-apply: mt-0;
+  --at-apply: mt-2;
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
