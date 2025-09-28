@@ -36,11 +36,18 @@ const { sublist } = Astro.props
 
 <style>
   .container-sidebar-entry {
-    --at-apply: gap-1 flex-col flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    display: flex;
   }
 
   .entry-title {
-    --at-apply: font-semibold text-sm leading-5 py-1 rounded-md;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    line-height: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     border-radius: calc(var(--radius) - 2px);
   }
 

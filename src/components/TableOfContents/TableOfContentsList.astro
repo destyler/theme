@@ -27,22 +27,31 @@ const { toc, depth = 0 } = Astro.props
 
 <style define:vars={{ depth }}>
   ul {
-    --at-apply: list-none m-0 p-0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
   li {
-    --at-apply: pt-2 mt-0
+    padding-top: 0.5rem;
+    margin-top: 0;
   }
 
   a {
-    --at-apply: no-underline text-muted-foreground inline-block [text-decoration:inherit];
+    text-decoration: none;
+    --un-text-opacity: 1;
+    color: hsl(var(--muted-foreground) / var(--un-text-opacity));
+    display: inline-block;
+    text-decoration: inherit;
   }
 
   a:hover {
-    --at-apply: text-foreground
+    --un-text-opacity: 1;
+    color: hsl(var(--foreground) / var(--un-text-opacity));
   }
 
   a[aria-current] {
-    --at-apply: text-foreground
+    --un-text-opacity: 1;
+    color: hsl(var(--foreground) / var(--un-text-opacity));
   }
 
   ul > li > ul {

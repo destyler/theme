@@ -20,9 +20,12 @@ const { toc } = Astro.locals.starlightRoute
 
 <style>
   starlight-toc {
-    --at-apply: overflow-auto h-full pb-10 [scrollbar-width:none];
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 2.5rem;
+    scrollbar-width: none;
   }
   p {
-    --at-apply: font-medium;
+    font-weight: 500;
   }
 </style>

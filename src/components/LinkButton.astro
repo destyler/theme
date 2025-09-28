@@ -15,7 +15,20 @@ const { variant = 'primary', ...attrs } = Astro.props
 
 <style>
   a {
-    --at-apply: text-primary-foreground font-medium text-xs leading-4 px-3 whitespace-nowrap gap-2 justify-center items-center h-8 inline-flex;
+    --un-text-opacity: 1;
+    color: hsl(var(--primary-foreground) / var(--un-text-opacity));
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    line-height: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    white-space: nowrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    display: inline-flex;
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.15s;
@@ -24,26 +37,34 @@ const { variant = 'primary', ...attrs } = Astro.props
   }
 
   .primary {
-    --at-apply: bg-primary;
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--primary) / var(--un-bg-opacity));
   }
 
   .primary:hover {
-    --at-apply: bg-primary/90;
+    background-color: hsl(var(--primary) / 0.9);
   }
 
   .secondary {
-    --at-apply: bg-secondary text-secondary-foreground;
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--secondary) / var(--un-bg-opacity));
+    --un-text-opacity: 1;
+    color: hsl(var(--secondary-foreground) / var(--un-text-opacity));
   }
 
   .secondary:hover {
-    --at-apply: bg-secondary/80;
+    background-color: hsl(var(--secondary) / 0.8);
   }
 
   .minimal {
-    --at-apply: text-accent-foreground;
+    --un-text-opacity: 1;
+    color: hsl(var(--accent-foreground) / var(--un-text-opacity));
   }
 
   .minimal:hover {
-    --at-apply: text-accent-foreground bg-accent;
+    --un-text-opacity: 1;
+    color: hsl(var(--accent-foreground) / var(--un-text-opacity));
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--accent) / var(--un-bg-opacity));
   }
 </style>

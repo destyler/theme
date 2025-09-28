@@ -89,19 +89,47 @@ const RADII = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
 
 <style>
   .theme-popover.visible {
-    --at-apply: op-100 visible translate-y-0;
+    opacity: 1;
+    visibility: visible;
+    --un-translate-y: 0;
+    transform: translateX(var(--un-translate-x)) translateY(var(--un-translate-y))
+      translateZ(var(--un-translate-z)) rotate(var(--un-rotate))
+      rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y))
+      rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y))
+      scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
+      scaleZ(var(--un-scale-z));
   }
 
   .theme-option.active {
-    --at-apply: bg-muted font-medium;
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--muted) / var(--un-bg-opacity));
+    font-weight: 500;
   }
 
   .color-option.active span {
-    --at-apply: ring-2 ring-foreground;
+    --un-ring-width: 2px;
+    --un-ring-offset-shadow: var(--un-ring-inset) 0 0 0
+      var(--un-ring-offset-width) var(--un-ring-offset-color);
+    --un-ring-shadow: var(--un-ring-inset) 0 0 0
+      calc(var(--un-ring-width) + var(--un-ring-offset-width))
+      var(--un-ring-color);
+    box-shadow: var(--un-ring-offset-shadow), var(--un-ring-shadow),
+      var(--un-shadow);
+    --un-ring-opacity: 1;
+    --un-ring-color: hsl(var(--foreground) / var(--un-ring-opacity));
   }
 
   .radius-option.active span {
-    --at-apply: ring-2 ring-foreground;
+    --un-ring-width: 2px;
+    --un-ring-offset-shadow: var(--un-ring-inset) 0 0 0
+      var(--un-ring-offset-width) var(--un-ring-offset-color);
+    --un-ring-shadow: var(--un-ring-inset) 0 0 0
+      calc(var(--un-ring-width) + var(--un-ring-offset-width))
+      var(--un-ring-color);
+    box-shadow: var(--un-ring-offset-shadow), var(--un-ring-shadow),
+      var(--un-shadow);
+    --un-ring-opacity: 1;
+    --un-ring-color: hsl(var(--foreground) / var(--un-ring-opacity));
   }
 </style>
 

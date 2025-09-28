@@ -13,7 +13,18 @@
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)) {
-  --at-apply: -tracking-wide font-semibold text-3xl leading-9 m-0 pb-2 scroll-m-20 border-b w-full!;
+  & {
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+    line-height: 2.25rem; /* 36px */
+    margin: 0;
+    padding-bottom: 0.5rem; /* 8px */
+    scroll-margin: 5rem; /* 80px */
+    border-bottom-width: 1px;
+    width: 100% !important;
+  }
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)):first-child {

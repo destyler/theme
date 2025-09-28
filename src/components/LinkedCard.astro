@@ -12,7 +12,18 @@ interface Props extends Omit<HTMLAttributes<'a'>, 'href'> {
 
 <style>
   a {
-    --at-apply: text-card-foreground bg-card border items-center flex-col w-full flex p-6 border-solid rounded-xl;
+    --un-text-opacity: 1;
+    color: hsl(var(--card-foreground) / var(--un-text-opacity));
+    --un-bg-opacity: 1;
+    background-color: hsl(var(--card) / var(--un-bg-opacity));
+    border-width: 1px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    padding: 1.5rem;
+    border-style: solid;
+    border-radius: calc(var(--radius) + 4px);
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.15s;
@@ -20,12 +31,12 @@ interface Props extends Omit<HTMLAttributes<'a'>, 'href'> {
   }
 
   a:hover {
-    --at-apply: bg-muted/50;
+    background-color: hsl(var(--muted) / 0.5);
   }
 
   @media (min-width: 640px) {
     a {
-      --at-apply: p-10;
+      padding: 2.5rem;
     }
   }
 </style>
