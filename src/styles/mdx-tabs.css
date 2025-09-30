@@ -1,9 +1,17 @@
 .tablist-wrapper.not-content {
-  --at-apply: relative border-b-2px border-b-solid border-b-border overflow-visible;
+  position: relative;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  --un-border-opacity: 1;
+  --un-border-bottom-opacity: var(--un-border-opacity);
+  border-bottom-color: hsl(var(--border) / var(--un-border-bottom-opacity));
+  overflow: visible;
 }
 
 .tab a {
-  --at-apply: relative inline-block pb-2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
 }
 
 .tab a[aria-selected='true'] {
@@ -12,10 +20,46 @@
 
 /* 基础下划线元素，默认收起并透明 */
 .tab a::after {
-  --at-apply: absolute left-0 right-0 bottom-0 content-empty h-2px bg-transparent z-1 transform scale-x-0 origin-left transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform pointer-events-none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  background-color: transparent;
+  z-index: 1;
+  transform: translateX(var(--un-translate-x)) translateY(var(--un-translate-y))
+    translateZ(var(--un-translate-z)) rotate(var(--un-rotate))
+    rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y))
+    rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y))
+    scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
+    scaleZ(var(--un-scale-z));
+  --un-scale-x: 0;
+  transform: translateX(var(--un-translate-x)) translateY(var(--un-translate-y))
+    translateZ(var(--un-translate-z)) rotate(var(--un-rotate))
+    rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y))
+    rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y))
+    scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
+    scaleZ(var(--un-scale-z));
+  transform-origin: left;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  pointer-events: none;
 }
 
 /* 选中时展开并应用主色，形成滑入/颜色过渡动画 */
 .tab a[aria-selected='true']::after {
-  --at-apply: bg-primary scale-x-100;
+  --un-bg-opacity: 1;
+  background-color: hsl(var(--primary) / var(--un-bg-opacity));
+  --un-scale-x: 1;
+  transform: translateX(var(--un-translate-x)) translateY(var(--un-translate-y))
+    translateZ(var(--un-translate-z)) rotate(var(--un-rotate))
+    rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y))
+    rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y))
+    scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
+    scaleZ(var(--un-scale-z));
 }

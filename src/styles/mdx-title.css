@@ -1,15 +1,23 @@
 .sl-markdown-content h1:not(:where(.not-content *)) {
-  --at-apply: -tracking-wide font-extrabold text-4xl leading-10 m-0 scroll-m-20;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0;
+  scroll-margin: 5rem;
 }
 
 @media (min-width: 1024px) {
   .sl-markdown-content h1:not(:where(.not-content *)) {
-    --at-apply: text-5xl leading-none;
+    font-size: 3rem;
+    line-height: 1;
+    line-height: 1;
   }
 }
 
 .sl-markdown-content :not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper) + :is(.sl-heading-wrapper) {
-  --at-apply: mt-4;
+  margin-top: 1rem;
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)) {
@@ -28,13 +36,25 @@
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)):first-child {
-  --at-apply: mt-2;
+  margin-top: 0.5rem;
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
-  --at-apply: -tracking-wide font-semibold text-2xl leading-8 m-0 scroll-m-20;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  line-height: 2rem;
+  margin: 0;
+  scroll-margin: 5rem;
 }
 
 .sl-markdown-content h4:not(:where(.not-content *)) {
-  --at-apply: -tracking-wide font-semibold text-xl leading-7 m-0 scroll-m-20;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  line-height: 1.75rem;
+  margin: 0;
+  scroll-margin: 5rem;
 }
