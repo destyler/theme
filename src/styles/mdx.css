@@ -70,6 +70,49 @@
   text-decoration-style: solid;
 }
 
+.sl-markdown-content img {
+  border-radius: var(--radius);
+}
+
+.expressive-code .frame{
+  --un-border-opacity: 1;
+  border-width: 1px;
+  border-color: hsl(var(--border) / var(--un-border-opacity));
+  --at-apply: border;
+  --un-shadow: 0 0 var(--un-shadow-color, rgb(0 0 0 / 0)) !important;
+  box-shadow: var(--un-ring-offset-shadow), var(--un-ring-shadow),
+    var(--un-shadow) !important;
+  border-radius: var(--radius);
+}
+
+.expressive-code .has-title pre {
+  border-radius: var(--radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.expressive-code .has-title .header {
+  border-radius: var(--radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.expressive-code .is-terminal .header {
+  border-radius: var(--radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.expressive-code .is-terminal pre {
+  border-radius: var(--radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.expressive-code pre {
+  border-radius: var(--radius);
+}
+
 .expressive-code .frame.has-title:not(.is-terminal) .title {
   background-color: transparent;
 }

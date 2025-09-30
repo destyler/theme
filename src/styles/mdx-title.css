@@ -30,7 +30,6 @@
     margin: 0;
     padding-bottom: 0.5rem; /* 8px */
     scroll-margin: 5rem; /* 80px */
-    border-bottom-width: 1px;
     width: 100% !important;
   }
 }
