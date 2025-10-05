@@ -51,6 +51,21 @@
   line-height: 1.25rem;
   font-weight: 600;
   font-family: var(--sl-font-mono), monospace;
+  /* 保持整块不被拆分；允许在 code 前后正常换行，同时让链接下划线传递 */
+  white-space: nowrap;
+}
+
+/* 复位代码块中的 code，避免影响多行代码显示与换行策略 */
+.sl-markdown-content pre code {
+  display: inline;
+  white-space: pre;
+}
+
+/* 确保链接包裹的 code 继承下划线/样式 */
+.sl-markdown-content a:not(:where(.not-content *)) code:not(:where(.not-content *)) {
+  text-decoration: inherit;
+  text-underline-offset: inherit;
+  text-decoration-style: inherit;
 }
 
 .sl-markdown-content a:not(:where(.not-content *)) {
@@ -101,6 +116,10 @@
   border-radius: var(--radius);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  --un-border-opacity: 0.5;
+  --un-border-bottom-opacity: var(--un-border-opacity);
+  border-bottom-color: hsl(var(--border) / var(--un-border-bottom-opacity));
+  border-bottom-width: 1px;
 }
 
 .expressive-code .is-terminal pre {

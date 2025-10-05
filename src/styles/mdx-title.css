@@ -27,7 +27,6 @@
     font-size: 1.875rem; /* 30px */
     line-height: 2.25rem; /* 36px */
     line-height: 2.25rem; /* 36px */
-    margin: 0;
     padding-bottom: 0.5rem; /* 8px */
     scroll-margin: 5rem; /* 80px */
     width: 100% !important;
@@ -35,7 +34,7 @@
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)):first-child {
-  margin-top: 0.5rem;
+  margin-top: 2rem;
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {
