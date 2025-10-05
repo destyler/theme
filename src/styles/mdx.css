@@ -87,6 +87,9 @@
 
 .sl-markdown-content img {
   border-radius: var(--radius);
+  --un-border-opacity: 0.5;
+  border-color: hsl(var(--border) / var(--un-border-opacity));
+  border-width: 1px;
 }
 
 .expressive-code .frame{
