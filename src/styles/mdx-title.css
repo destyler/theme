@@ -17,24 +17,19 @@
 }
 
 .sl-markdown-content :not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper) + :is(.sl-heading-wrapper) {
-  margin-top: 1rem;
+  margin-top: 0rem !important;
 }
 
 .sl-markdown-content h2:not(:where(.not-content *)) {
-  & {
-    letter-spacing: -0.025em;
-    font-weight: 600;
-    font-size: 1.875rem; /* 30px */
-    line-height: 2.25rem; /* 36px */
-    line-height: 2.25rem; /* 36px */
-    padding-bottom: 0.5rem; /* 8px */
-    scroll-margin: 5rem; /* 80px */
-    width: 100% !important;
-  }
-}
-
-.sl-markdown-content h2:not(:where(.not-content *)):first-child {
-  margin-top: 2rem;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  line-height: 2.25rem; /* 36px */
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  scroll-margin: 5rem; /* 80px */
+  width: 100% !important;
 }
 
 .sl-markdown-content h3:not(:where(.not-content *)) {

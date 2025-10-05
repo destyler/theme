@@ -90,6 +90,13 @@
   --un-border-opacity: 0.5;
   border-color: hsl(var(--border) / var(--un-border-opacity));
   border-width: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.expressive-code {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .expressive-code .frame{
@@ -145,6 +152,10 @@
 
 .starlight-aside {
   border-radius: calc(var(--radius) - 2px);
+
+  & .expressive-code {
+    margin-bottom: 0;
+  }
 }
 
 .sl-markdown-content p:not(:where(.not-content *)):not(li p):first-child {
