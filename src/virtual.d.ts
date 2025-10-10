@@ -29,3 +29,10 @@ declare module 'virtual:user-component:Sidebar' {
   const Sidebar: AstroComponentFactory
   export default Sidebar
 }
+
+declare module 'virtual:user-component:TOCExtra' {
+  import type { AstroComponentFactory } from 'astro'
+
+  const TOCExtra: AstroComponentFactory
+  export default TOCExtra
+}

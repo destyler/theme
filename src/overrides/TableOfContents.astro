@@ -2,6 +2,14 @@
 import TableOfContentsList from '../components/TableOfContents/TableOfContentsList.astro'
 
 const { toc } = Astro.locals.starlightRoute
+
+let TOCExtra: any = null
+try {
+  TOCExtra = (await import('virtual:user-component:TOCExtra')).default
+}
+catch (e) {
+  TOCExtra = null
+}
 ---
 
 {
@@ -12,6 +20,7 @@ const { toc } = Astro.locals.starlightRoute
         <TableOfContentsList toc={toc.items} />
       </nav>
       <slot />
+      {TOCExtra && <TOCExtra />}
     </starlight-toc>
   )
 }
