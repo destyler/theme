@@ -7,7 +7,7 @@ let TOCExtra: any = null
 try {
   TOCExtra = (await import('virtual:user-component:TOCExtra')).default
 }
-catch (e) {
+catch {
   TOCExtra = null
 }
 ---
@@ -31,8 +31,20 @@ catch (e) {
   starlight-toc {
     overflow: auto;
     height: 100%;
+    padding-top: 0.75rem;
     padding-bottom: 2.5rem;
     scrollbar-width: none;
+  }
+  nav {
+    position: relative;
+  }
+  /* Keep the TOC title visible at the top while the list scrolls in desktop */
+  #starlight__on-this-page {
+    position: sticky;
+    /* Match the container's top padding to avoid shift on first scroll */
+    top: 0.75rem;
+    z-index: 10;
+    display: block;
   }
   p {
     font-weight: 500;

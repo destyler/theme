@@ -5,6 +5,8 @@
   --sl-font-mono: 'Geist Mono', monospace;
 
   --header-height: 4rem;
+  /* Gap under header for sticky sidebars */
+  --sl-sidebar-gap: 2.375rem;
 
   --sl-color-text-accent: hsl(var(--primary));
 }
