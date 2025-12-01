@@ -11,7 +11,7 @@
 .tab a {
   position: relative;
   display: inline-block;
-  padding-bottom: 2px;
+  padding-bottom: 8px;
 }
 
 .tab a[aria-selected='true'] {
